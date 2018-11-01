@@ -18,20 +18,6 @@ Output files:
 - combined_data.csv : combined data (country population, ores data and wikipedia data)
 
 
-First, import necessary packages
-
-
-```python
-import requests
-import json
-import pandas as pd
-import numpy as np
-
-
-```
-
-Import the data, and print out the first few rows to see examples.
-
 Data comes from a few different sources. Wikipedia data is available via figshare (https://figshare.com/articles/Untitled_Item/5513449 , under country/data/) with license CC-BY-SA 4.0. This contains "most English-language Wikipedia articles within the category 'Category:Politicians by nationality' and subcategories". This data contains 3 columns, which are called out in the above link as follows:
 
 1. "country", containing the sanitised country name, extracted from the category name;
@@ -44,31 +30,8 @@ This file contains the population in millions from mid-2018 along with the count
 A copy of the datasets, downloaded in oct, 2018, are available in this repo.
 
 
-```python
-wiki_data = pd.read_csv('page_data.csv')
-country_data = pd.read_csv('WPDS_2018_data.csv',thousands=',')
-country_data.rename(columns={"Population mid-2018 (millions)": "population"},inplace=True)
-
-wiki_data.head()
-```
-
-
-
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
